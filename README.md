@@ -2,7 +2,7 @@
 Application made in React Native, using TypeScript and StyledComponents.
 
 ## Getting Started with Expo init
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create a new App](https://docs.expo.dev/get-started/create-a-new-app/).
 
 ## Available Scripts
 
