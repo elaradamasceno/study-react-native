@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { 
   Image,
-  StatusBar,
   Text,
   View,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/core';
 
 import { ButtonIcon } from '../../components/ButtonIcon';
 
@@ -12,19 +12,21 @@ import IllustrationImg from '../../assets/illustration.png'
 import { styles } from './style';
 
 export function SignIn(){
-  const [text, setText] = useState<string>('')
-
+  const navigation = useNavigation();
+ 
+  const handleSignIn = () => {
+    navigation.navigate('Home')
+  }
 
   return(
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="transparent" translucent/>
       <Image source={IllustrationImg} style={styles.image} resizeMode="stretch"/>
 
       <View style={styles.content}>
         <Text style={styles.title}>
-          Organize {`\n`}
-          suas jogatinas {`\n`}
-          facilmente
+          Conecte-se {'\n'}
+          e organize suas {'\n'}
+          jogatinas
         </Text>
 
         <Text style={styles.subtitle}>
@@ -32,7 +34,11 @@ export function SignIn(){
           favoritos com seus amigos
         </Text>
 
-        <ButtonIcon title="Entre com o discord" activeOpacity={0.7} />
+        <ButtonIcon 
+          title="Entrar com o discord" 
+          activeOpacity={0.7} 
+          onPress={handleSignIn}
+        />
       </View>
     </View>
   )
